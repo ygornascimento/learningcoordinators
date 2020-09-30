@@ -10,7 +10,7 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
 
-    var dismissView: (() -> Void)?
+    var popView: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,6 @@ final class SettingsViewController: UIViewController {
 //        navigationController?.popViewController(animated: true)
 
         // MARK: - New Way with Coordinators
-        dismissView?()
+        popView?()
     }
 }

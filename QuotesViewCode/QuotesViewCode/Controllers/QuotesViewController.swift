@@ -10,8 +10,8 @@ import UIKit
 
 final class QuotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var didShowQuote: ((Quote) -> Void)?
-    var didShowSettings: (() -> Void)?
+    var goToQuote: ((Quote) -> Void)?
+    var goToSettings: (() -> Void)?
 
     private let quotes: [Quote] = [
         Quote(author: "Marie Curie",        content: "Be less curious about people and more curious about ideas."),
@@ -65,7 +65,7 @@ final class QuotesViewController: UIViewController, UITableViewDataSource, UITab
         table.deselectRow(at: indexPath, animated: true)
         
         let quote = quotes[indexPath.row]
-        didShowQuote?(quote)
+        goToQuote?(quote)
     }
 
     private func setupView() {
@@ -89,7 +89,7 @@ final class QuotesViewController: UIViewController, UITableViewDataSource, UITab
         //navigationController?.pushViewController(SettingsViewController(), animated: true)
 
         // MARK: - New Way with Coordinator
-        didShowSettings?()
+        goToSettings?()
     }
 }
 

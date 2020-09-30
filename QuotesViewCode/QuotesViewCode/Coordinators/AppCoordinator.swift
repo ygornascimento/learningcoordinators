@@ -17,34 +17,34 @@ final class AppCoordinator {
     }
 
     func start() {
-        showQuotes()
+        gotToQuotesViewController()
     }
 
-    private func showQuotes() {
+    private func gotToQuotesViewController() {
         let quotesViewController = QuotesViewController()
 
-        quotesViewController.didShowQuote = { [weak self] (quote) in
-            self?.showQuote(quote)
+        quotesViewController.goToQuote = { [weak self] (quote) in
+            self?.goToQuoteViewController(quote)
         }
 
-        quotesViewController.didShowSettings = { [weak self] in
-            self?.showSettings()
+        quotesViewController.goToSettings = { [weak self] in
+            self?.goToSettingsViewController()
         }
 
         navigationController.pushViewController(quotesViewController, animated: true)
     }
 
-    private func showQuote(_ quote: Quote) {
+    private func goToQuoteViewController(_ quote: Quote) {
         let quoteViewController = QuoteViewController()
         quoteViewController.quote = quote
 
         navigationController.pushViewController(quoteViewController, animated: true)
     }
 
-    private func showSettings() {
+    private func goToSettingsViewController() {
         let settingsViewController = SettingsViewController()
 
-        settingsViewController.dismissView = { [weak self] in
+        settingsViewController.popView = { [weak self] in
             self?.navigationController.popViewController(animated: true)
         }
 
