@@ -19,6 +19,8 @@
 		F42D319F25232CE800C5D7E4 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D319E25232CE800C5D7E4 /* QuoteViewController.swift */; };
 		F42D31A125232D3F00C5D7E4 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D31A025232D3F00C5D7E4 /* QuoteView.swift */; };
 		F44D7DF82523BC380033A7F2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D7DF72523BC380033A7F2 /* SettingsViewController.swift */; };
+		F44D7DFD2523D9060033A7F2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D7DFC2523D9060033A7F2 /* AppCoordinator.swift */; };
+		F44D7E022523DC440033A7F2 /* AppCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D7E012523DC440033A7F2 /* AppCoordinatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F42D319E25232CE800C5D7E4 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		F42D31A025232D3F00C5D7E4 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		F44D7DF72523BC380033A7F2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F44D7DFC2523D9060033A7F2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F44D7E012523DC440033A7F2 /* AppCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		F42D317E2521E1EC00C5D7E4 /* QuotesViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				F44D7E002523DC320033A7F2 /* Protocols */,
+				F44D7DFB2523D8F80033A7F2 /* Coordinators */,
 				F42D31952521E35000C5D7E4 /* Models */,
 				F42D31942521E34300C5D7E4 /* Views */,
 				F42D31932521E32E00C5D7E4 /* Controllers */,
@@ -107,6 +113,22 @@
 				F42D319C25232AF500C5D7E4 /* FontWeight.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F44D7DFB2523D8F80033A7F2 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F44D7DFC2523D9060033A7F2 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F44D7E002523DC320033A7F2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F44D7E012523DC440033A7F2 /* AppCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44D7DFD2523D9060033A7F2 /* AppCoordinator.swift in Sources */,
 				F42D31842521E1EC00C5D7E4 /* QuotesViewController.swift in Sources */,
+				F44D7E022523DC440033A7F2 /* AppCoordinatorProtocol.swift in Sources */,
 				F42D319F25232CE800C5D7E4 /* QuoteViewController.swift in Sources */,
 				F42D31992521E80900C5D7E4 /* CellView.swift in Sources */,
 				F44D7DF82523BC380033A7F2 /* SettingsViewController.swift in Sources */,
