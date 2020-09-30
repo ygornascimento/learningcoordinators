@@ -10,6 +10,9 @@ import UIKit
 
 final class QuotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var didShowQuote: ((Quote) -> Void)?
+    var didShowSettings: (() -> Void)?
+
     private let quotes: [Quote] = [
         Quote(author: "Marie Curie",        content: "Be less curious about people and more curious about ideas."),
         Quote(author: "Albert Einstein",    content: "Life is like riding a bicycle. To keep your balance you must keep moving."),
@@ -52,10 +55,17 @@ final class QuotesViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // MARK: - Old Way
+//        table.deselectRow(at: indexPath, animated: true)
+//        let detailView = QuoteViewController()
+//        detailView.quote = quotes[indexPath.row]
+//        navigationController?.pushViewController(detailView, animated: true)
+
+        // MARK: - New Way with Coordinator
         table.deselectRow(at: indexPath, animated: true)
-        let detailView = QuoteViewController()
-        detailView.quote = quotes[indexPath.row]
-        navigationController?.pushViewController(detailView, animated: true)
+        
+        let quote = quotes[indexPath.row]
+        didShowQuote?(quote)
     }
 
     private func setupView() {
@@ -75,7 +85,8 @@ final class QuotesViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     @objc private func settingsTarget() {
-        navigationController?.pushViewController(SettingsViewController(), animated: true)
+        //navigationController?.pushViewController(SettingsViewController(), animated: true)
+        didShowSettings?()
     }
 }
 

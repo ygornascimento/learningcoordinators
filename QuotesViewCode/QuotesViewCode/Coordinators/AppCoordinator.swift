@@ -22,6 +22,27 @@ final class AppCoordinator {
 
     private func showQuotes() {
         let quotesViewController = QuotesViewController()
+
+        quotesViewController.didShowQuote = { [weak self] (quote) in
+            self?.showQuote(quote)
+        }
+
+        quotesViewController.didShowSettings = { [weak self] in
+            self?.showSettings()
+        }
+
         navigationController.pushViewController(quotesViewController, animated: true)
+    }
+
+    private func showQuote(_ quote: Quote) {
+        let quoteViewController = QuoteViewController()
+        quoteViewController.quote = quote
+
+        navigationController.pushViewController(quoteViewController, animated: true)
+    }
+
+    private func showSettings() {
+        let settingsViewController = SettingsViewController()
+        navigationController.present(settingsViewController, animated: true, completion: nil)
     }
 }
