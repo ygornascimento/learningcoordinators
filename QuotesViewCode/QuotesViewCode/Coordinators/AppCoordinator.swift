@@ -43,6 +43,11 @@ final class AppCoordinator {
 
     private func showSettings() {
         let settingsViewController = SettingsViewController()
-        navigationController.present(settingsViewController, animated: true, completion: nil)
+
+        settingsViewController.dismissView = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }
+
+        navigationController.pushViewController(settingsViewController, animated: true)
     }
 }

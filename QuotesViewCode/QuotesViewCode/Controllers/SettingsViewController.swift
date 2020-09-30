@@ -10,6 +10,8 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
 
+    var dismissView: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
@@ -18,6 +20,10 @@ final class SettingsViewController: UIViewController {
     }
 
     @objc private func doneTarget() {
-        navigationController?.popViewController(animated: true)
+        // MARK: - Old Way
+//        navigationController?.popViewController(animated: true)
+
+        // MARK: - New Way with Coordinators
+        dismissView?()
     }
 }

@@ -85,7 +85,10 @@ final class QuotesViewController: UIViewController, UITableViewDataSource, UITab
     }
 
     @objc private func settingsTarget() {
+        // MARK: - Old Way
         //navigationController?.pushViewController(SettingsViewController(), animated: true)
+
+        // MARK: - New Way with Coordinator
         didShowSettings?()
     }
 }
