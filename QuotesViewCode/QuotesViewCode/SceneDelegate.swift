@@ -11,11 +11,11 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let appCoordinator = AppCoordinator()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             window = UIWindow(windowScene: windowScene)
-            let appCoordinator = AppCoordinator()
             window?.rootViewController = appCoordinator.rootViewController
             window?.backgroundColor = .white
             window?.makeKeyAndVisible()
