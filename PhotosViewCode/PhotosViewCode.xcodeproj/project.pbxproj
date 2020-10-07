@@ -20,6 +20,7 @@
 		F471E550252E02AD002AE663 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E54F252E02AD002AE663 /* PhotosView.swift */; };
 		F471E557252E1056002AE663 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E556252E1056002AE663 /* Photo.swift */; };
 		F471E55A252E10F7002AE663 /* UserDefaults_Photos+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E559252E10F7002AE663 /* UserDefaults_Photos+Extension.swift */; };
+		F471E561252E713A002AE663 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E560252E713A002AE663 /* PhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F471E54F252E02AD002AE663 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		F471E556252E1056002AE663 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F471E559252E10F7002AE663 /* UserDefaults_Photos+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults_Photos+Extension.swift"; sourceTree = "<group>"; };
+		F471E560252E713A002AE663 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				F471E55E252E703E002AE663 /* HomeViews */,
+				F471E55F252E711B002AE663 /* PhotoViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +129,14 @@
 				F471E54F252E02AD002AE663 /* PhotosView.swift */,
 			);
 			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		F471E55F252E711B002AE663 /* PhotoViews */ = {
+			isa = PBXGroup;
+			children = (
+				F471E560252E713A002AE663 /* PhotoView.swift */,
+			);
+			path = PhotoViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				F471E54A252DFDBB002AE663 /* SignInViewController.swift in Sources */,
 				F471E536252DF8FA002AE663 /* AppCoordinator.swift in Sources */,
 				F471E541252DFCF6002AE663 /* HomeViewController.swift in Sources */,
+				F471E561252E713A002AE663 /* PhotoView.swift in Sources */,
 				F471E520252DF8A0002AE663 /* AppDelegate.swift in Sources */,
 				F471E557252E1056002AE663 /* Photo.swift in Sources */,
 				F471E522252DF8A0002AE663 /* SceneDelegate.swift in Sources */,

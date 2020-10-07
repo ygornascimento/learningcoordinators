@@ -16,11 +16,23 @@ final class AppCoordinator {
     }
     
     func start() {
-        goToPhotosViewController()
+        goToHomeViewController()
     }
     
-    private func goToPhotosViewController() {
-        let photosViewController = HomeViewController()
-        navigationController.pushViewController(photosViewController, animated: true)
+    private func goToHomeViewController() {
+        let homeViewController = HomeViewController()
+        
+        homeViewController.didSelectPhoto = { [weak self] (photo) in
+            self?.goToPhotoViewController(photo)
+        }
+        
+        navigationController.pushViewController(homeViewController, animated: true)
+    }
+    
+    private func goToPhotoViewController(_ photo: Photo) {
+        let photoViewController = PhotoViewController()
+        photoViewController.photo = photo
+        
+        navigationController.pushViewController(photoViewController, animated: true)
     }
 }
