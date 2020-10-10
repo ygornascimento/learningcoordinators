@@ -7,10 +7,13 @@
 
 import UIKit
 
-final class BuyPhotoCoordinator {
+final class BuyPhotoCoordinator: CoordinatorProtocol {
+    
+    var didFinish: ((CoordinatorProtocol) -> Void)?
     
     // MARK: - Private Properties
     
+    private var initialViewController: UIViewController?
     private let navigationController: UINavigationController
     private let photo: Photo
     
@@ -19,6 +22,8 @@ final class BuyPhotoCoordinator {
     init(navigationController: UINavigationController, photo: Photo) {
         self.navigationController = navigationController
         self.photo = photo
+        
+        self.initialViewController = navigationController.viewControllers.last
     }
     
     func start() {
@@ -30,7 +35,13 @@ final class BuyPhotoCoordinator {
     }
     
     private func finish() {
+        didFinish?(self)
         
+        if let viewController = initialViewController {
+            navigationController.popToViewController(viewController, animated: true)
+        } else {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     
     // MARK: - Go To SignInViewController

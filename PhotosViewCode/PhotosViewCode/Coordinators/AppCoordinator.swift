@@ -8,16 +8,31 @@
 import UIKit
 
 final class AppCoordinator {
-    
+
     private let navigationController = UINavigationController()
-    private var isBuyingPhoto: Photo?
-    
+    private var childCoordinators: [CoordinatorProtocol] = []
+
     var rootViewController: UIViewController {
         return navigationController
     }
-    
+
     func start() {
         goToHomeViewController()
+    }
+    
+    private func pushCoordinator(_ coordinator: CoordinatorProtocol) {
+        coordinator.didFinish = { [weak self] (coordinator) in
+            self?.popCoordinator(coordinator)
+        }
+
+        coordinator.start()
+        childCoordinators.append(coordinator)
+    }
+    
+    private func popCoordinator(_ coordinator: CoordinatorProtocol) {
+        if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
+            childCoordinators.remove(at: index)
+        }
     }
 
     // MARK: - goToHomeViewController
@@ -69,6 +84,6 @@ final class AppCoordinator {
     private func goToBuyPhotoViewController(_ photo: Photo) {
         let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
 
-        buyPhotoCoordinator.start()
+        pushCoordinator(buyPhotoCoordinator)
     }
 }
