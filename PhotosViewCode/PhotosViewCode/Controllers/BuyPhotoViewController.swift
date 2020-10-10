@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BuyViewController: UIViewController {
+final class BuyPhotoViewController: UIViewController {
     
     var photo: Photo?
     var didCancel: (() -> Void)?

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4113D4825322B28009434B9 /* BuyPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */; };
 		F471E520252DF8A0002AE663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E51F252DF8A0002AE663 /* AppDelegate.swift */; };
 		F471E522252DF8A0002AE663 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E521252DF8A0002AE663 /* SceneDelegate.swift */; };
 		F471E529252DF8A0002AE663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471E528252DF8A0002AE663 /* Assets.xcassets */; };
@@ -14,7 +15,7 @@
 		F471E536252DF8FA002AE663 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E535252DF8FA002AE663 /* AppCoordinator.swift */; };
 		F471E541252DFCF6002AE663 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E540252DFCF6002AE663 /* HomeViewController.swift */; };
 		F471E544252DFD30002AE663 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E543252DFD30002AE663 /* PhotoViewController.swift */; };
-		F471E547252DFD80002AE663 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E546252DFD80002AE663 /* BuyViewController.swift */; };
+		F471E547252DFD80002AE663 /* BuyPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E546252DFD80002AE663 /* BuyPhotoViewController.swift */; };
 		F471E54A252DFDBB002AE663 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E549252DFDBB002AE663 /* SignInViewController.swift */; };
 		F471E54D252E02A5002AE663 /* PhotosViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E54C252E02A5002AE663 /* PhotosViewCell.swift */; };
 		F471E550252E02AD002AE663 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E54F252E02AD002AE663 /* PhotosView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPhotoCoordinator.swift; sourceTree = "<group>"; };
 		F471E51C252DF8A0002AE663 /* PhotosViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F471E51F252DF8A0002AE663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F471E521252DF8A0002AE663 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +37,7 @@
 		F471E535252DF8FA002AE663 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F471E540252DFCF6002AE663 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F471E543252DFD30002AE663 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
-		F471E546252DFD80002AE663 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		F471E546252DFD80002AE663 /* BuyPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPhotoViewController.swift; sourceTree = "<group>"; };
 		F471E549252DFDBB002AE663 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F471E54C252E02A5002AE663 /* PhotosViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewCell.swift; sourceTree = "<group>"; };
 		F471E54F252E02AD002AE663 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4113D4625322AF2009434B9 /* ChildCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */,
+			);
+			path = ChildCoordinators;
+			sourceTree = "<group>";
+		};
 		F471E513252DF8A0002AE663 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F471E535252DF8FA002AE663 /* AppCoordinator.swift */,
+				F4113D4625322AF2009434B9 /* ChildCoordinators */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -103,7 +114,7 @@
 			children = (
 				F471E540252DFCF6002AE663 /* HomeViewController.swift */,
 				F471E543252DFD30002AE663 /* PhotoViewController.swift */,
-				F471E546252DFD80002AE663 /* BuyViewController.swift */,
+				F471E546252DFD80002AE663 /* BuyPhotoViewController.swift */,
 				F471E549252DFDBB002AE663 /* SignInViewController.swift */,
 			);
 			path = Controllers;
@@ -233,6 +244,7 @@
 				F471E54A252DFDBB002AE663 /* SignInViewController.swift in Sources */,
 				F471E536252DF8FA002AE663 /* AppCoordinator.swift in Sources */,
 				F471E541252DFCF6002AE663 /* HomeViewController.swift in Sources */,
+				F4113D4825322B28009434B9 /* BuyPhotoCoordinator.swift in Sources */,
 				F471E561252E713A002AE663 /* PhotoView.swift in Sources */,
 				F471E520252DF8A0002AE663 /* AppDelegate.swift in Sources */,
 				F471E557252E1056002AE663 /* Photo.swift in Sources */,
@@ -242,7 +254,7 @@
 				F4E01554252F535A00CD0FDC /* BuyView.swift in Sources */,
 				F471E550252E02AD002AE663 /* PhotosView.swift in Sources */,
 				F471E544252DFD30002AE663 /* PhotoViewController.swift in Sources */,
-				F471E547252DFD80002AE663 /* BuyViewController.swift in Sources */,
+				F471E547252DFD80002AE663 /* BuyPhotoViewController.swift in Sources */,
 				F471E54D252E02A5002AE663 /* PhotosViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
