@@ -22,7 +22,6 @@ final class BuyPhotoCoordinator: CoordinatorProtocol {
     init(navigationController: UINavigationController, photo: Photo) {
         self.navigationController = navigationController
         self.photo = photo
-        
         self.initialViewController = navigationController.viewControllers.last
     }
     
