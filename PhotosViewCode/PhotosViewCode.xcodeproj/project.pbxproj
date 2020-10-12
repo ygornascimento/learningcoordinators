@@ -65,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */,
-				F4113D4D25325BE0009434B9 /* CoordinatorProtocol.swift */,
 			);
 			path = ChildCoordinators;
 			sourceTree = "<group>";
@@ -89,6 +88,7 @@
 		F471E51E252DF8A0002AE663 /* PhotosViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				F47A4B012534C1A70093D3B0 /* Protocols */,
 				F471E53B252DFA1F002AE663 /* Models */,
 				F471E53A252DFA17002AE663 /* Views */,
 				F471E539252DFA10002AE663 /* Controllers */,
@@ -157,6 +157,14 @@
 				F471E560252E713A002AE663 /* PhotoView.swift */,
 			);
 			path = PhotoViews;
+			sourceTree = "<group>";
+		};
+		F47A4B012534C1A70093D3B0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F4113D4D25325BE0009434B9 /* CoordinatorProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F4E01552252F534900CD0FDC /* BuyViews */ = {
