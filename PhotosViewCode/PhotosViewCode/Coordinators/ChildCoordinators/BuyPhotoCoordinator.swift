@@ -9,7 +9,7 @@ import UIKit
 
 final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
     
-    var didFinish: ((ChildCoordinatorsProtocol) -> Void)?
+    var didFinishFlow: ((ChildCoordinatorsProtocol) -> Void)?
     
     // MARK: - Private Properties
     
@@ -34,7 +34,7 @@ final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
     }
     
     private func finish() {
-        didFinish?(self)
+        didFinishFlow?(self)
         
         if let viewController = initialViewController {
             navigationController.popToViewController(viewController, animated: true)

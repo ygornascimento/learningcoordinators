@@ -21,7 +21,7 @@ final class AppCoordinator {
     }
     
     private func pushChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
-        coordinator.didFinish = { [weak self] (coordinator) in
+        coordinator.didFinishFlow = { [weak self] (coordinator) in
             self?.popChildCoordinator(coordinator)
         }
 

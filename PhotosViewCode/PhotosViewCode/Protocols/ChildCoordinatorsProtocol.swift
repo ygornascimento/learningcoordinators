@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ChildCoordinatorsProtocol: AnyObject {
-    var didFinish: ((ChildCoordinatorsProtocol) -> Void)? { get set }
+    var didFinishFlow: ((ChildCoordinatorsProtocol) -> Void)? { get set }
     func start()
 }
