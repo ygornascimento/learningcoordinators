@@ -10,7 +10,7 @@ import UIKit
 final class AppCoordinator {
 
     private let navigationController = UINavigationController()
-    private var childCoordinators: [CoordinatorProtocol] = []
+    private var childCoordinators: [ChildCoordinatorsProtocol] = []
 
     var rootViewController: UIViewController {
         return navigationController
@@ -20,7 +20,7 @@ final class AppCoordinator {
         goToHomeViewController()
     }
     
-    private func pushCoordinator(_ coordinator: CoordinatorProtocol) {
+    private func pushCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
         coordinator.didFinish = { [weak self] (coordinator) in
             self?.popCoordinator(coordinator)
         }
@@ -29,7 +29,7 @@ final class AppCoordinator {
         childCoordinators.append(coordinator)
     }
     
-    private func popCoordinator(_ coordinator: CoordinatorProtocol) {
+    private func popCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
         if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
             childCoordinators.remove(at: index)
         }

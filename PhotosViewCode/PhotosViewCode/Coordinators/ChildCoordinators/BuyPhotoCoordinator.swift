@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class BuyPhotoCoordinator: CoordinatorProtocol {
+final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
     
-    var didFinish: ((CoordinatorProtocol) -> Void)?
+    var didFinish: ((ChildCoordinatorsProtocol) -> Void)?
     
     // MARK: - Private Properties
     
