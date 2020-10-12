@@ -24,6 +24,7 @@ final class BuyPhotoViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        navigationItem.hidesBackButton = true
     }
     
     private func setupView() {

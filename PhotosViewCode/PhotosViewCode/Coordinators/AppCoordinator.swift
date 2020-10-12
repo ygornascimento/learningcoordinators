@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AppCoordinator {
+final class AppCoordinator: NSObject, UINavigationControllerDelegate {
 
     private let navigationController = UINavigationController()
     private var childCoordinators: [ChildCoordinatorsProtocol] = []
@@ -17,7 +17,20 @@ final class AppCoordinator {
     }
 
     func start() {
+        navigationController.delegate = self
         goToHomeViewController()
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        childCoordinators.forEach { (childCoordinator) in
+            childCoordinator.navigationController(navigationController, willShow: viewController, animated: true)
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        childCoordinators.forEach { (childCoordinator) in
+            childCoordinator.navigationController(navigationController, didShow: viewController, animated: true)
+        }
     }
     
     private func pushChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {

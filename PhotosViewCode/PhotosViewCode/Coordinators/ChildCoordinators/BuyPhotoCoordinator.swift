@@ -33,13 +33,19 @@ final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
         }
     }
     
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        if viewController === initialViewController {
+            didFinishFlow?(self)
+        }
+    }
+    
     private func finish() {
-        didFinishFlow?(self)
-        
+
         if let viewController = initialViewController {
             navigationController.popToViewController(viewController, animated: true)
         } else {
             navigationController.popToRootViewController(animated: true)
+            didFinishFlow?(self)
         }
     }
     
