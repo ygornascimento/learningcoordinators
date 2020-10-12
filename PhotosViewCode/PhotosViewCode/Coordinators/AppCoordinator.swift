@@ -20,16 +20,16 @@ final class AppCoordinator {
         goToHomeViewController()
     }
     
-    private func pushCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
+    private func pushChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
         coordinator.didFinish = { [weak self] (coordinator) in
-            self?.popCoordinator(coordinator)
+            self?.popChildCoordinator(coordinator)
         }
 
         coordinator.start()
         childCoordinators.append(coordinator)
     }
     
-    private func popCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
+    private func popChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
         if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
             childCoordinators.remove(at: index)
         }
@@ -84,6 +84,6 @@ final class AppCoordinator {
     private func goToBuyPhotoViewController(_ photo: Photo) {
         let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
 
-        pushCoordinator(buyPhotoCoordinator)
+        pushChildCoordinator(buyPhotoCoordinator)
     }
 }
