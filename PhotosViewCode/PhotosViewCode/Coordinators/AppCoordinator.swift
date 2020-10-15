@@ -7,33 +7,33 @@
 
 import UIKit
 
-final class AppCoordinator: NSObject, UINavigationControllerDelegate {
+final class AppCoordinator: BaseCoordinator {
 
     private let navigationController = UINavigationController()
-    private var childCoordinators: [ChildCoordinatorsProtocol] = []
+    private var childCoordinators: [BaseCoordinator] = []
 
     var rootViewController: UIViewController {
         return navigationController
     }
 
-    func start() {
+    override func start() {
         navigationController.delegate = self
         goToHomeViewController()
     }
     
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         childCoordinators.forEach { (childCoordinator) in
             childCoordinator.navigationController(navigationController, willShow: viewController, animated: true)
         }
     }
     
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         childCoordinators.forEach { (childCoordinator) in
             childCoordinator.navigationController(navigationController, didShow: viewController, animated: true)
         }
     }
     
-    private func pushChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
+    private func pushChildCoordinator(_ coordinator: BaseCoordinator) {
         coordinator.didFinishFlow = { [weak self] (coordinator) in
             self?.popChildCoordinator(coordinator)
         }
@@ -42,7 +42,7 @@ final class AppCoordinator: NSObject, UINavigationControllerDelegate {
         childCoordinators.append(coordinator)
     }
     
-    private func popChildCoordinator(_ coordinator: ChildCoordinatorsProtocol) {
+    private func popChildCoordinator(_ coordinator: BaseCoordinator) {
         if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
             childCoordinators.remove(at: index)
         }

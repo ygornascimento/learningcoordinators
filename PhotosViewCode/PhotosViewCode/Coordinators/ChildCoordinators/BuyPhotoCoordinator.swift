@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
-    
-    var didFinishFlow: ((ChildCoordinatorsProtocol) -> Void)?
+final class BuyPhotoCoordinator: BaseCoordinator {
     
     // MARK: - Private Properties
     
@@ -23,9 +21,11 @@ final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
         self.navigationController = navigationController
         self.photo = photo
         self.initialViewController = navigationController.viewControllers.last
+        
+        super.init()
     }
     
-    func start() {
+    override func start() {
         if UserDefaults.isSignedIn {
             goToBuyPhotoViewController(photo)
         } else {
@@ -33,7 +33,7 @@ final class BuyPhotoCoordinator: ChildCoordinatorsProtocol {
         }
     }
     
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if viewController === initialViewController {
             didFinishFlow?(self)
         }
