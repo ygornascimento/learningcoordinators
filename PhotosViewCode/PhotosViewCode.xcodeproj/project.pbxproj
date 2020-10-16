@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F4113D4825322B28009434B9 /* BuyPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */; };
-		F4113D4E25325BE0009434B9 /* ChildCoordinatorsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4113D4D25325BE0009434B9 /* ChildCoordinatorsProtocol.swift */; };
 		F471E520252DF8A0002AE663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E51F252DF8A0002AE663 /* AppDelegate.swift */; };
 		F471E522252DF8A0002AE663 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E521252DF8A0002AE663 /* SceneDelegate.swift */; };
 		F471E529252DF8A0002AE663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F471E528252DF8A0002AE663 /* Assets.xcassets */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPhotoCoordinator.swift; sourceTree = "<group>"; };
-		F4113D4D25325BE0009434B9 /* ChildCoordinatorsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorsProtocol.swift; sourceTree = "<group>"; };
 		F471E51C252DF8A0002AE663 /* PhotosViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F471E51F252DF8A0002AE663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F471E521252DF8A0002AE663 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		F471E51E252DF8A0002AE663 /* PhotosViewCode */ = {
 			isa = PBXGroup;
 			children = (
-				F47A4B012534C1A70093D3B0 /* Protocols */,
 				F471E53B252DFA1F002AE663 /* Models */,
 				F471E53A252DFA17002AE663 /* Views */,
 				F471E539252DFA10002AE663 /* Controllers */,
@@ -160,14 +157,6 @@
 				F471E560252E713A002AE663 /* PhotoView.swift */,
 			);
 			path = PhotoViews;
-			sourceTree = "<group>";
-		};
-		F47A4B012534C1A70093D3B0 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F4113D4D25325BE0009434B9 /* ChildCoordinatorsProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F4E01552252F534900CD0FDC /* BuyViews */ = {
@@ -255,7 +244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4113D4E25325BE0009434B9 /* ChildCoordinatorsProtocol.swift in Sources */,
 				F471E54A252DFDBB002AE663 /* SignInViewController.swift in Sources */,
 				F471E536252DF8FA002AE663 /* AppCoordinator.swift in Sources */,
 				F471E541252DFCF6002AE663 /* HomeViewController.swift in Sources */,
