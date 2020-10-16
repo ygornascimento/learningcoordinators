@@ -8,6 +8,11 @@
 import UIKit
 
 final class AppCoordinator: BaseCoordinator {
+    
+    private enum PurchaseFlowType {
+        case horizontal
+        case vertical
+    }
 
     private let navigationController = UINavigationController()
     private var childCoordinators: [BaseCoordinator] = []
@@ -59,6 +64,10 @@ final class AppCoordinator: BaseCoordinator {
         homeViewController.didSignIn = { [weak self] in
             self?.goToSignInViewController()
         }
+        
+        homeViewController.didBuyPhoto = { [weak self] (photo) in
+            self?.goToBuyPhotoViewController(photo, purchaseFlowType: .vertical)
+        }
 
         navigationController.pushViewController(homeViewController, animated: true)
     }
@@ -87,16 +96,24 @@ final class AppCoordinator: BaseCoordinator {
         photoViewController.photo = photo
         
         photoViewController.didBuyPhoto = { [weak self] (photo) in
-            self?.goToBuyPhotoViewController(photo)
+            self?.goToBuyPhotoViewController(photo, purchaseFlowType: .horizontal)
         }
 
         navigationController.pushViewController(photoViewController, animated: true)
     }
 
     // MARK: - goToBuyPhotoViewController
-    private func goToBuyPhotoViewController(_ photo: Photo) {
+    private func goToBuyPhotoViewController(_ photo: Photo, purchaseFlowType: PurchaseFlowType) {
+        let buyPhotoCoordinator: BuyPhotoCoordinator
+        
+        switch purchaseFlowType {
+            case .horizontal:
+                buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
+            case .vertical:
+                buyPhotoCoordinator = BuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
+        }
 //        let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
-        let buyPhotoCoordinator = VerticalBuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
+//        let buyPhotoCoordinator = BuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
 
         pushChildCoordinator(buyPhotoCoordinator)
     }

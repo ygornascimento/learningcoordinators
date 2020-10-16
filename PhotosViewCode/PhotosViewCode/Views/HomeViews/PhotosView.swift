@@ -24,8 +24,24 @@ final class PhotosView: UIView {
     
     private let imageLabel: UILabel = {
         let label = UILabel()
+ //       label.numberOfLines = 2
+//        label.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
+//        label.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .vertical)
+        label.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: .horizontal)
         
         return label
+    }()
+    
+    private(set) var buyButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Buy", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.setTitleColor(.systemBlue, for: .normal)
+//        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+//        button.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
+        button.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        
+        return button
     }()
 
     // MARK: - Initializers
@@ -50,10 +66,12 @@ final class PhotosView: UIView {
         addSubview(activityIndicator)
         addSubview(imageView)
         addSubview(imageLabel)
+        addSubview(buyButton)
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageLabel.translatesAutoresizingMaskIntoConstraints = false
+        buyButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
@@ -66,8 +84,13 @@ final class PhotosView: UIView {
             activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
             
             imageLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 16),
-            imageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            imageLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+            //imageLabel.trailingAnchor.constraint(equalTo: buyButton.leadingAnchor, constant: -8),
+            imageLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            
+            
+            buyButton.leadingAnchor.constraint(equalTo: imageLabel.trailingAnchor, constant: 8),
+            buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            buyButton.centerYAnchor.constraint(equalTo: imageLabel.centerYAnchor)
         ])
     }
     

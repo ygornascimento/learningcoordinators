@@ -12,6 +12,7 @@ final class BuyPhotoCoordinator: BaseCoordinator {
     // MARK: - Private Properties
     
     private var initialViewController: UIViewController?
+    private var presentingViewController: UIViewController?
     private let navigationController: UINavigationController
     private let photo: Photo
     
@@ -25,12 +26,25 @@ final class BuyPhotoCoordinator: BaseCoordinator {
         super.init()
     }
     
+    init(presentingViewController: UIViewController, photo: Photo) {
+        self.presentingViewController = presentingViewController
+        self.photo = photo
+        
+        self.navigationController = UINavigationController()
+        
+        super.init()
+        
+        navigationController.delegate = self
+    }
+    
     override func start() {
         if UserDefaults.isSignedIn {
             goToBuyPhotoViewController(photo)
         } else {
             goToSignInViewController()
         }
+        
+        presentingViewController?.present(navigationController, animated: true, completion: nil)
     }
     
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
@@ -44,7 +58,7 @@ final class BuyPhotoCoordinator: BaseCoordinator {
         if let viewController = initialViewController {
             navigationController.popToViewController(viewController, animated: true)
         } else {
-            navigationController.popToRootViewController(animated: true)
+            presentingViewController?.dismiss(animated: true, completion: nil)
             didFinishFlow?(self)
         }
     }

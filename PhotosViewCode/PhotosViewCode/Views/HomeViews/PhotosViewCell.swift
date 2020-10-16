@@ -9,6 +9,7 @@ import UIKit
 
 final class PhotosViewCell: UITableViewCell {
     
+    var didBuy: (() -> Void)?
     private var dataTask: URLSessionDataTask?
     
     static var cellReuseIdentifier: String {
@@ -21,15 +22,18 @@ final class PhotosViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayout()
+        setupButtonActions()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, url: URL?) {
+    func configure(title: String, url: URL?, didBuyPhoto: Bool) {
         // Configure Title Label
         cellView.set(title: title, url: url)
+        
+        cellView.buyButton.isHidden = didBuyPhoto
         
         // Animate Activity Indicator View
         cellView.activityIndicator.startAnimating()
@@ -74,5 +78,13 @@ final class PhotosViewCell: UITableViewCell {
             cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+    
+    private func setupButtonActions() {
+        cellView.buyButton.addTarget(self, action: #selector(buy(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func buy(_ sender: UIButton) {
+        didBuy?()
     }
 }

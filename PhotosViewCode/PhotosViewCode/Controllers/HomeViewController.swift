@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var didSignIn: (() -> Void)?
     var didSelectPhoto: ((Photo) -> Void)?
+    var didBuyPhoto: ((Photo) -> Void)?
     
     private var table = UITableView()
     
@@ -55,6 +56,10 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(signIn(_:)))
         }
+        
+        if let indexPaths = table.indexPathsForVisibleRows {
+            table.reloadRows(at: indexPaths, with: .none)
+        }
     }
     
     private func setupLayout() {
@@ -91,7 +96,11 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let photo = dataSource[indexPath.row]
         
-        cell.configure(title: photo.title, url: photo.url)
+        cell.configure(title: photo.title, url: photo.url, didBuyPhoto: UserDefaults.didBuy(photo))
+        
+        cell.didBuy = { [weak self] in
+            self?.didBuyPhoto?(photo)
+        }
         
         return cell
      }
