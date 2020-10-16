@@ -44,36 +44,6 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         updateView()
     }
     
-    private func setupView() {
-        setupLayout()
-        updateView()
-    }
-    
-    private func updateView() {
-        
-        if UserDefaults.isSignedIn {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut(_:)))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(signIn(_:)))
-        }
-        
-        if let indexPaths = table.indexPathsForVisibleRows {
-            table.reloadRows(at: indexPaths, with: .none)
-        }
-    }
-    
-    private func setupLayout() {
-        view.addSubview(table)
-        table.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            table.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            table.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-    }
-    
     @objc private func signOut(_ sender: UIBarButtonItem) {
         UserDefaults.token = nil
         updateView()
@@ -117,5 +87,35 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    private func setupView() {
+        setupLayout()
+        updateView()
+    }
+    
+    private func updateView() {
+        
+        if UserDefaults.isSignedIn {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut(_:)))
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(signIn(_:)))
+        }
+        
+        if let indexPaths = table.indexPathsForVisibleRows {
+            table.reloadRows(at: indexPaths, with: .none)
+        }
+    }
+    
+    private func setupLayout() {
+        view.addSubview(table)
+        table.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            table.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            table.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            table.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            table.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 }
