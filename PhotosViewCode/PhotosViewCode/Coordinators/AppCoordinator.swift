@@ -95,7 +95,8 @@ final class AppCoordinator: BaseCoordinator {
 
     // MARK: - goToBuyPhotoViewController
     private func goToBuyPhotoViewController(_ photo: Photo) {
-        let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
+//        let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
+        let buyPhotoCoordinator = VerticalBuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
 
         pushChildCoordinator(buyPhotoCoordinator)
     }

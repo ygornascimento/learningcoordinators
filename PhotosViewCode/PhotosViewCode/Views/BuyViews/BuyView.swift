@@ -66,6 +66,7 @@ final class BuyView: UIView {
         
         addSubview(allViewsStackView)
         allViewsStackView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .white
         
         NSLayoutConstraint.activate([
             allViewsStackView.centerYAnchor.constraint(equalTo: centerYAnchor),

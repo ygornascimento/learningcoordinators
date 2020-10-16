@@ -26,6 +26,7 @@
 		F4E01554252F535A00CD0FDC /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E01553252F535A00CD0FDC /* BuyView.swift */; };
 		F4E0155A252F6A4800CD0FDC /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E01559252F6A4800CD0FDC /* SignInView.swift */; };
 		F4E1B81B25387DB4002A4040 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B81A25387DB4002A4040 /* BaseCoordinator.swift */; };
+		F4E1B81F2538865A002A4040 /* VerticalBuyPhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B81E2538865A002A4040 /* VerticalBuyPhotoCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F4E01553252F535A00CD0FDC /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		F4E01559252F6A4800CD0FDC /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F4E1B81A25387DB4002A4040 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		F4E1B81E2538865A002A4040 /* VerticalBuyPhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBuyPhotoCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */,
+				F4E1B81E2538865A002A4040 /* VerticalBuyPhotoCoordinator.swift */,
 			);
 			path = ChildCoordinators;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				F471E520252DF8A0002AE663 /* AppDelegate.swift in Sources */,
 				F471E557252E1056002AE663 /* Photo.swift in Sources */,
 				F471E522252DF8A0002AE663 /* SceneDelegate.swift in Sources */,
+				F4E1B81F2538865A002A4040 /* VerticalBuyPhotoCoordinator.swift in Sources */,
 				F471E55A252E10F7002AE663 /* UserDefaults_Photos+Extension.swift in Sources */,
 				F4E0155A252F6A4800CD0FDC /* SignInView.swift in Sources */,
 				F4E01554252F535A00CD0FDC /* BuyView.swift in Sources */,
