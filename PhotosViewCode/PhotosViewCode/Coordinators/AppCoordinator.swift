@@ -15,7 +15,6 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private let navigationController = UINavigationController()
-//    private var childCoordinators: [BaseCoordinator] = []
 
     var rootViewController: UIViewController {
         return navigationController
@@ -37,21 +36,6 @@ final class AppCoordinator: BaseCoordinator {
             childCoordinator.navigationController(navigationController, didShow: viewController, animated: true)
         }
     }
-    
-//    private func pushChildCoordinator(_ coordinator: BaseCoordinator) {
-//        coordinator.didFinishFlow = { [weak self] (coordinator) in
-//            self?.popChildCoordinator(coordinator)
-//        }
-//
-//        coordinator.start()
-//        childCoordinators.append(coordinator)
-//    }
-//
-//    private func popChildCoordinator(_ coordinator: BaseCoordinator) {
-//        if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
-//            childCoordinators.remove(at: index)
-//        }
-//    }
 
     // MARK: - goToHomeViewController
     private func goToHomeViewController() {
@@ -112,8 +96,6 @@ final class AppCoordinator: BaseCoordinator {
             case .vertical:
                 buyPhotoCoordinator = BuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
         }
-//        let buyPhotoCoordinator = BuyPhotoCoordinator(navigationController: navigationController, photo: photo)
-//        let buyPhotoCoordinator = BuyPhotoCoordinator(presentingViewController: navigationController, photo: photo)
 
         pushChildCoordinator(buyPhotoCoordinator)
     }
