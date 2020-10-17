@@ -12,6 +12,7 @@ final class BuyPhotoViewController: UIViewController {
     var photo: Photo?
     var didCancel: (() -> Void)?
     var didBuyPhoto: ((Photo) -> Void)?
+    var didShowTerms: (() -> Void)?
     
     private let buyView = BuyView()
     private let activityIndicatorView = UIActivityIndicatorView()
@@ -34,6 +35,7 @@ final class BuyPhotoViewController: UIViewController {
         }
         
         buyView.buyButton.addTarget(self, action: #selector(buyAction), for: .touchUpInside)
+        buyView.termsButton.addTarget(self, action: #selector(showTerms), for: .touchUpInside)
         
         setupPriceLabel()
     }
@@ -96,5 +98,9 @@ final class BuyPhotoViewController: UIViewController {
                 self.didBuyPhoto?(photo)
             }
         }
+    }
+    
+    @objc func showTerms(_ sender: UIButton) {
+        didShowTerms?()
     }
 }

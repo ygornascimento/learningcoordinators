@@ -99,6 +99,16 @@ final class BuyPhotoCoordinator: BaseCoordinator {
             self?.finish()
         }
         
+        buyPhotoViewController.didShowTerms = { [weak self] in
+            self?.goToTermsViewController()
+        }
+        
         navigationController.pushViewController(buyPhotoViewController, animated: true)
+    }
+    
+    private func goToTermsViewController() {
+        let termsCoordinator = TermsCoordinator(presentingViewController: navigationController)
+        
+        pushChildCoordinator(termsCoordinator)
     }
 }

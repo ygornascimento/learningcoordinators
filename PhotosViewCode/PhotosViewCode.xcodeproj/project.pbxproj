@@ -22,6 +22,9 @@
 		F471E557252E1056002AE663 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E556252E1056002AE663 /* Photo.swift */; };
 		F471E55A252E10F7002AE663 /* UserDefaults_Photos+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E559252E10F7002AE663 /* UserDefaults_Photos+Extension.swift */; };
 		F471E561252E713A002AE663 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E560252E713A002AE663 /* PhotoView.swift */; };
+		F49F8DBD253B453B00802A27 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F8DBC253B453B00802A27 /* TermsViewController.swift */; };
+		F49F8DC0253B461D00802A27 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F8DBF253B461D00802A27 /* TermsView.swift */; };
+		F49F8DC4253B4D7700802A27 /* TermsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F8DC3253B4D7700802A27 /* TermsCoordinator.swift */; };
 		F4E01554252F535A00CD0FDC /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E01553252F535A00CD0FDC /* BuyView.swift */; };
 		F4E0155A252F6A4800CD0FDC /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E01559252F6A4800CD0FDC /* SignInView.swift */; };
 		F4E1B81B25387DB4002A4040 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1B81A25387DB4002A4040 /* BaseCoordinator.swift */; };
@@ -45,6 +48,9 @@
 		F471E556252E1056002AE663 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		F471E559252E10F7002AE663 /* UserDefaults_Photos+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults_Photos+Extension.swift"; sourceTree = "<group>"; };
 		F471E560252E713A002AE663 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		F49F8DBC253B453B00802A27 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		F49F8DBF253B461D00802A27 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		F49F8DC3253B4D7700802A27 /* TermsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsCoordinator.swift; sourceTree = "<group>"; };
 		F4E01553252F535A00CD0FDC /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		F4E01559252F6A4800CD0FDC /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F4E1B81A25387DB4002A4040 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				F4113D4725322B28009434B9 /* BuyPhotoCoordinator.swift */,
+				F49F8DC3253B4D7700802A27 /* TermsCoordinator.swift */,
 			);
 			path = ChildCoordinators;
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 				F471E543252DFD30002AE663 /* PhotoViewController.swift */,
 				F471E546252DFD80002AE663 /* BuyPhotoViewController.swift */,
 				F471E549252DFDBB002AE663 /* SignInViewController.swift */,
+				F49F8DBC253B453B00802A27 /* TermsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E01553252F535A00CD0FDC /* BuyView.swift */,
+				F49F8DBF253B461D00802A27 /* TermsView.swift */,
 			);
 			path = BuyViews;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49F8DC4253B4D7700802A27 /* TermsCoordinator.swift in Sources */,
 				F471E54A252DFDBB002AE663 /* SignInViewController.swift in Sources */,
 				F471E536252DF8FA002AE663 /* AppCoordinator.swift in Sources */,
 				F471E541252DFCF6002AE663 /* HomeViewController.swift in Sources */,
@@ -254,9 +264,11 @@
 				F471E557252E1056002AE663 /* Photo.swift in Sources */,
 				F471E522252DF8A0002AE663 /* SceneDelegate.swift in Sources */,
 				F471E55A252E10F7002AE663 /* UserDefaults_Photos+Extension.swift in Sources */,
+				F49F8DC0253B461D00802A27 /* TermsView.swift in Sources */,
 				F4E0155A252F6A4800CD0FDC /* SignInView.swift in Sources */,
 				F4E01554252F535A00CD0FDC /* BuyView.swift in Sources */,
 				F471E550252E02AD002AE663 /* PhotosView.swift in Sources */,
+				F49F8DBD253B453B00802A27 /* TermsViewController.swift in Sources */,
 				F471E544252DFD30002AE663 /* PhotoViewController.swift in Sources */,
 				F471E547252DFD80002AE663 /* BuyPhotoViewController.swift in Sources */,
 				F471E54D252E02A5002AE663 /* PhotosViewCell.swift in Sources */,

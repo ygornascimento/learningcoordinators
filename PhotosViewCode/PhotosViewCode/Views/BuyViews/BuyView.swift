@@ -34,8 +34,17 @@ final class BuyView: UIView {
         return button
     }()
     
+    private(set) var termsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Terms of Service", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitleColor(.systemBlue, for: .normal)
+        
+        return button
+    }()
+    
     private lazy var allViewsStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [imageLabel, priceLabel, buyButton])
+        let stack = UIStackView(arrangedSubviews: [imageLabel, priceLabel, buyButton, termsButton])
         stack.axis = .vertical
         stack.alignment = .center
         stack.distribution = .fill

@@ -15,7 +15,7 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private let navigationController = UINavigationController()
-    private var childCoordinators: [BaseCoordinator] = []
+//    private var childCoordinators: [BaseCoordinator] = []
 
     var rootViewController: UIViewController {
         return navigationController
@@ -38,20 +38,20 @@ final class AppCoordinator: BaseCoordinator {
         }
     }
     
-    private func pushChildCoordinator(_ coordinator: BaseCoordinator) {
-        coordinator.didFinishFlow = { [weak self] (coordinator) in
-            self?.popChildCoordinator(coordinator)
-        }
-
-        coordinator.start()
-        childCoordinators.append(coordinator)
-    }
-    
-    private func popChildCoordinator(_ coordinator: BaseCoordinator) {
-        if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
-            childCoordinators.remove(at: index)
-        }
-    }
+//    private func pushChildCoordinator(_ coordinator: BaseCoordinator) {
+//        coordinator.didFinishFlow = { [weak self] (coordinator) in
+//            self?.popChildCoordinator(coordinator)
+//        }
+//
+//        coordinator.start()
+//        childCoordinators.append(coordinator)
+//    }
+//
+//    private func popChildCoordinator(_ coordinator: BaseCoordinator) {
+//        if let index = childCoordinators.firstIndex(where: { $0 === coordinator}) {
+//            childCoordinators.remove(at: index)
+//        }
+//    }
 
     // MARK: - goToHomeViewController
     private func goToHomeViewController() {
